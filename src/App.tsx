@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Button from './components/Button';
+
+interface Tasks {
+  id: string;
+  isCompleted: boolean;
+}
 
 function App() {
+  const [tasks, setTasks] = useState<Tasks[]>();
+  const [count, setCount] = useState<number | null>(null);
+
+  setTasks([
+    {
+      id: '1',
+      isCompleted: true
+    }
+  ]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button theme="dark" onClick={() => console.log('Clicked')}>
+          Texto qualquer
+        </Button>
       </header>
     </div>
   );
-}
+};
 
 export default App;
