@@ -13,3 +13,17 @@ quantidadeProdutos que armazena a quantidade de produtos em estoque. Inicialment
 digamos, 100 (usarei JavaScript como exemplo):
 
 `let quantidadeProdutos = 100;`
+
+Agora, imagine que em algum ponto do código, acidentalmente reatribuimos um valor diferente à variável quantidadeProdutos, 
+mas dessa vez como uma string:
+
+`quantidadeProdutos = "50";`
+
+Devido à tipagem dinâmica, essa reatribuição não resultaria em um erro imediato. No entanto, mais tarde no código, quando
+tentarmos realizar operações matemáticas ou comparações usando essa variável, os resultados serão inesperados:
+
+`let totalVenda = quantidadeProdutos * 10;`
+
+Isso resultaria em um erro devido à multiplicação de uma string por um número. Neste exemplo, a tipagem dinâmica permitiu que 
+uma variável originalmente numérica se tornasse uma string sem aviso prévio, levando a erros sutis e difíceis de identificar. Isso
+pode impactar negativamente a funcionalidade do programa e causar confusão na depuração.
